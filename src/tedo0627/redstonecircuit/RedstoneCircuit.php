@@ -14,6 +14,7 @@ use pocketmine\item\ItemIdentifier;
 use pocketmine\item\ItemIds;
 use pocketmine\item\ToolTier;
 use pocketmine\network\mcpe\convert\RuntimeBlockMapping;
+use pocketmine\network\mcpe\protocol\ProtocolInfo;
 use pocketmine\plugin\PluginBase;
 use pocketmine\scheduler\AsyncTask;
 use ReflectionMethod;
@@ -246,7 +247,9 @@ class RedstoneCircuit extends PluginBase {
             $damage = $table->getDamage($id, $states);
             if ($mapping->toRuntimeId(($id << Block::INTERNAL_METADATA_BITS) | $damage) !== $update) continue;
 
-            $method->invoke($mapping, $runtimeId, $id, $damage);
+            foreach (ProtocolInfo::ACCEPTED_PROTOCOL as $protocol) {
+                $method->invoke($mapping, $protocol, $runtimeId, $id, $damage);
+            }
         }
     }
 
