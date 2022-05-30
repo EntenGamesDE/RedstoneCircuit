@@ -34,5 +34,5 @@ blocks:
   redstone_wire: true
   repeater: true
 
-event: false
+event: true
 ...
