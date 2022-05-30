@@ -1,0 +1,22 @@
+{
+	"name": "entengamesde/redstonecircuit",
+	"require": {
+		"pocketmine/pocketmine-mp": "dev-stable",
+		"nethergamesmc/bedrock-data": "dev-master",
+		"nethergamesmc/bedrock-protocol": "dev-master"
+	},
+	"repositories": {
+		"pocketmine-mp": {
+			"type": "vcs",
+			"url":  "git@github.com:EntenGamesDE/PocketMine-MP.git"
+		},
+		"bedrock-protocol": {
+			"type": "vcs",
+			"url":  "git@github.com:NetherGamesMC/BedrockProtocol.git"
+		},
+		"bedrock-data": {
+			"type": "vcs",
+			"url":  "git@github.com:NetherGamesMC/BedrockData.git"
+		}
+	}
+}
